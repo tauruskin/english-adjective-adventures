@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/englishpusher-trivia-adjectives/',
+  base: process.env.NODE_ENV === 'production' && process.env.GITHUB_ACTIONS ? '/english-adjective-adventures/' : '/',
   server: {
     host: "::",
     port: 8080,
